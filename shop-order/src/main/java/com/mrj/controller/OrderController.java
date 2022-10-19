@@ -16,14 +16,24 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class OrderController {
 
-    @Autowired
-    private RestTemplate restTemplate;
+//    @Autowired
+//    private RestTemplate restTemplate;
 
     @Autowired
     private ProductService productService;
 
     @Autowired
     private OrderService orderService;
+
+    @RequestMapping("/message1")
+    public String message1() {
+        return "message1";
+    }
+
+    @RequestMapping("/message2")
+    public String message2() {
+        return "message2";
+    }
 
     @RequestMapping("/order/{pid}")
     public Order createOrder(@PathVariable("pid") Integer pid) {
